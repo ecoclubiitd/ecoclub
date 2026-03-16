@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const isActive = currentCategoryId === category.id;
             const itemCount = category.items.length;
 
-            btn.className = `category-tab text-left w-full whitespace-nowrap md:whitespace-normal px-4 py-3 md:py-4 rounded-lg md:rounded-r-xl md:rounded-l-none font-semibold text-sm md:text-base snap-center shrink-0 md:shrink transition-all duration-300 relative overflow-hidden group`;
+            btn.className = `category-tab text-left w-auto md:w-full px-3 py-2 md:px-4 md:py-4 rounded-full md:rounded-r-xl md:rounded-l-none font-semibold text-xs md:text-base shrink transition-all duration-300 relative overflow-hidden group border border-accent-silver/10 md:border-0`;
 
             if (isActive) {
                 btn.className += ` text-accent-gold bg-accent-silver/5 shadow-glass md:-ml-[1px] md:border-l-4 md:border-accent-gold`;
