@@ -55,7 +55,7 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3 md:gap-4 group">
                 <img src="ecologo.png" alt="Economics and Finance Club Logo"
-                    class="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform duration-300">
+                    class="h-12 md:h-14 w-auto group-hover:scale-105 transition-transform duration-300">
                 <div
                     class="hidden sm:block text-xl md:text-2xl font-serif font-bold text-accent-silver tracking-wide leading-tight group-hover:text-accent-gold transition-colors">
                     Economics and Finance Club
@@ -71,7 +71,8 @@
                         Delhi</span>
                 </div>
             </a>
-            <div class="flex items-center space-x-6">
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-6">
                 <a href="events.html"
                     class="text-sm font-medium text-white hover:text-accent-gold transition-colors">Events</a>
                 <a href="team.html"
@@ -87,6 +88,37 @@
                     Back to Home
                 </a>
             </div>
+
+            <!-- Hamburger Button (Mobile) -->
+            <button id="mobile-menu-btn"
+                class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-50">
+                <span class="w-6 h-0.5 bg-accent-silver transition-transform duration-300 origin-center"></span>
+                <span class="w-6 h-0.5 bg-accent-silver transition-opacity duration-300"></span>
+                <span class="w-6 h-0.5 bg-accent-silver transition-transform duration-300 origin-center"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer / Dropdown -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-secondary/95 backdrop-blur-xl border-t border-accent-silver/10 shadow-2xl transition-all duration-300 flex flex-col py-4 px-6 gap-4">
+            <a href="index.html#about"
+                class="text-accent-silver text-lg font-medium hover:text-accent-gold transition-colors py-2 border-b border-white/5 inline-block">About</a>
+            <a href="events.html"
+                class="text-accent-silver text-lg font-medium hover:text-accent-gold transition-colors py-2 border-b border-white/5 inline-block">Events</a>
+            <a href="articles.html"
+                class="text-accent-gold text-lg font-bold transition-colors py-2 border-b border-white/5 inline-block">Articles</a>
+            <a href="resources.html"
+                class="text-accent-silver text-lg font-medium hover:text-accent-gold transition-colors py-2 border-b border-white/5 inline-block">Resources</a>
+            <a href="team.html"
+                class="text-accent-silver text-lg font-medium hover:text-accent-gold transition-colors py-2 border-b border-white/5 inline-block">Team</a>
+            <a href="index.html"
+                class="inline-flex items-center text-accent-silver text-lg font-medium hover:text-accent-gold transition-colors py-2 mt-2">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Back to Home
+            </a>
         </div>
     </nav>
 

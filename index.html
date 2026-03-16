@@ -71,6 +71,7 @@
                         Delhi</span>
                 </div>
             </a>
+            <!-- Desktop Links -->
             <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
                 <a href="#about" class="hover:text-accent-gold transition-colors">About</a>
                 <a href="events.html" class="hover:text-accent-gold transition-colors">Events</a>
@@ -78,6 +79,29 @@
                 <a href="resources.html" class="hover:text-accent-gold transition-colors">Resources</a>
                 <a href="team.html" class="hover:text-accent-gold transition-colors">Team</a>
             </div>
+
+            <!-- Hamburger Button (Mobile) -->
+            <button id="mobile-menu-btn"
+                class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-50">
+                <span class="w-6 h-0.5 bg-accent-silver transition-transform duration-300 origin-center"></span>
+                <span class="w-6 h-0.5 bg-accent-silver transition-opacity duration-300"></span>
+                <span class="w-6 h-0.5 bg-accent-silver transition-transform duration-300 origin-center"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer / Dropdown -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-secondary/95 backdrop-blur-xl border-t border-accent-silver/10 shadow-2xl transition-all duration-300 flex flex-col py-4 px-6 gap-4">
+            <a href="#about"
+                class="text-accent-silver text-lg font-medium hover:text-accent-gold transition-colors py-2 border-b border-white/5 inline-block">About</a>
+            <a href="events.html"
+                class="text-accent-silver text-lg font-medium hover:text-accent-gold transition-colors py-2 border-b border-white/5 inline-block">Events</a>
+            <a href="articles.html"
+                class="text-accent-silver text-lg font-medium hover:text-accent-gold transition-colors py-2 border-b border-white/5 inline-block">Articles</a>
+            <a href="resources.html"
+                class="text-accent-silver text-lg font-medium hover:text-accent-gold transition-colors py-2 border-b border-white/5 inline-block">Resources</a>
+            <a href="team.html"
+                class="text-accent-silver text-lg font-medium hover:text-accent-gold transition-colors py-2 inline-block">Team</a>
         </div>
     </nav>
 
@@ -94,8 +118,8 @@
 
         <!-- Content Overlay -->
         <div class="relative z-10 container mx-auto px-6 pt-20 flex flex-col items-center text-center">
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 leading-tight" data-aos="fade-up"
-                data-aos-duration="1000">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 leading-tight"
+                data-aos="fade-up" data-aos-duration="1000">
                 Empowering Minds,<br>
                 <span class="text-gradient">Navigating Markets,</span><br>
                 Shaping Economies.

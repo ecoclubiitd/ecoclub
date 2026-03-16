@@ -5,6 +5,31 @@ document.addEventListener('DOMContentLoaded', () => {
         once: true,
         offset: 100
     });
+
+    // Mobile Menu Toggle Logic
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            // Toggle visibility
+            mobileMenu.classList.toggle('hidden');
+
+            // Animate Hamburger into 'X'
+            const spans = mobileMenuBtn.querySelectorAll('span');
+            if (!mobileMenu.classList.contains('hidden')) {
+                // Menu is open
+                spans[0].classList.add('-rotate-45', 'translate-y-2');
+                spans[1].classList.add('opacity-0');
+                spans[2].classList.add('rotate-45', '-translate-y-2');
+            } else {
+                // Menu is closed
+                spans[0].classList.remove('-rotate-45', 'translate-y-2');
+                spans[1].classList.remove('opacity-0');
+                spans[2].classList.remove('rotate-45', '-translate-y-2');
+            }
+        });
+    }
 });
 
 // Articles Page Logic — Self-contained Carousel Widgets
