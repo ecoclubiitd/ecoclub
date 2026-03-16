@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | EcoClub IIT Delhi</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#001B3A',
+                        secondary: '#0F172A',
+                        accent: {
+                            silver: '#E2E8F0',
+                            gold: '#D4AF37'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
+                        'glow': '0 0 15px rgba(212, 175, 55, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body
+    class="font-sans antialiased overflow-x-hidden selection:bg-accent-gold selection:text-primary bg-primary text-accent-silver">
+
+    <!-- Header -->
+    <nav
+        class="fixed w-full z-50 transition-all duration-300 glassmorphism shadow-glass border-b border-accent-silver/10 bg-primary/95">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center w-full">
+            <a href="index.html" class="flex items-center gap-3 md:gap-4 group">
+                <img src="ecologo.png" alt="Economics and Finance Club Logo"
+                    class="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform duration-300">
+                <div
+                    class="hidden sm:block text-xl md:text-2xl font-serif font-bold text-accent-silver tracking-wide leading-tight group-hover:text-accent-gold transition-colors">
+                    Economics and Finance Club
+                    <span
+                        class="text-accent-gold text-xs md:text-sm block font-sans font-light tracking-widest uppercase mt-0.5">IIT
+                        Delhi</span>
+                </div>
+                <!-- Mobile Fallback -->
+                <div
+                    class="sm:hidden text-lg font-serif font-bold text-accent-silver tracking-wide group-hover:text-accent-gold transition-colors">
+                    EcoClub <span
+                        class="text-accent-gold text-[10px] block font-sans font-light tracking-widest uppercase">IIT
+                        Delhi</span>
+                </div>
+            </a>
+
+            <div class="flex items-center space-x-6">
+                <a href="events.html"
+                    class="text-sm font-medium text-white hover:text-accent-gold transition-colors">Events</a>
+                <a href="articles.html"
+                    class="text-sm font-medium text-white hover:text-accent-gold transition-colors">Articles</a>
+                <a href="resources.html"
+                    class="text-sm font-medium text-white hover:text-accent-gold transition-colors">Resources</a>
+                <a href="index.html"
+                    class="inline-flex items-center text-sm font-medium text-accent-silver hover:text-accent-gold transition-colors">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Back <span class="hidden sm:inline">&nbsp;to Home</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Layout -->
+    <main class="pt-[140px] md:pt-32 pb-24 min-h-screen relative z-10 font-montserrat">
+        <!-- Animated Gradient Mesh Background -->
+        <div class="mesh-bg absolute inset-0 z-[-1] opacity-60"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-secondary opacity-90 z-[-1]">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Header & Year Selector -->
+            <div class="flex flex-col md:flex-row justify-between items-end md:items-center mb-16 gap-6"
+                data-aos="fade-in">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4 text-accent-silver">Executive Board</h1>
+                    <p class="text-accent-silver/70 font-light font-sans max-w-2xl">Meet the dedicated team driving the
+                        vision and operations of the Economics and Finance Club at IIT Delhi.</p>
+                </div>
+
+                <div class="w-full md:w-auto flex-shrink-0">
+                    <div class="relative">
+                        <select id="year-selector"
+                            class="appearance-none w-full md:w-48 bg-secondary/80 border border-accent-silver/20 text-accent-silver text-sm rounded-lg focus:ring-accent-gold focus:border-accent-gold block p-3 pr-10 shadow-glass outline-none cursor-pointer tracking-wider font-semibold">
+                            <!-- JS populated -->
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-accent-gold">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hierarchy Container -->
+            <div id="team-hierarchy-container" class="space-y-16">
+                <!-- Data injected via JS -->
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary/80 py-8 border-t border-accent-silver/10 text-center relative z-10">
+        <p class="text-accent-gold text-sm tracking-wide mb-2"><span class="text-accent-silver/80">For any queries
+                contact:</span> <a href="mailto:econ_finclub@iitd.ac.in"
+                class="hover:underline hover:text-white transition-colors">econ_finclub@iitd.ac.in</a></p>
+        <p class="text-accent-silver/50 text-xs tracking-wider uppercase font-sans">
+            &copy; 2026 Economics and Finance Club, IIT Delhi. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="team_data.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

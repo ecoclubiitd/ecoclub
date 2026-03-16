@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Repository | EcoClub IIT Delhi</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#001B3A',
+                        secondary: '#0F172A',
+                        accent: {
+                            silver: '#E2E8F0',
+                            gold: '#D4AF37'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
+                        'glow': '0 0 15px rgba(212, 175, 55, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Specific overrides for resources layout */
+        .category-tab {
+            transition: all 0.3s ease;
+        }
+
+        .category-tab.active {
+            background-color: rgba(212, 175, 55, 0.15);
+            /* Gold tint */
+            border-color: rgba(212, 175, 55, 0.5);
+            color: #D4AF37;
+        }
+
+        .category-tab:hover:not(.active) {
+            background-color: rgba(226, 232, 240, 0.1);
+        }
+    </style>
+</head>
+
+<body
+    class="font-sans antialiased overflow-x-hidden selection:bg-accent-gold selection:text-primary bg-primary text-accent-silver">
+
+    <!-- Header -->
+    <nav
+        class="fixed w-full z-50 transition-all duration-300 glassmorphism shadow-glass border-b border-accent-silver/10 bg-primary/95">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap gap-4 justify-between items-center w-full">
+            <a href="index.html" class="flex items-center gap-3 md:gap-4 group flex-shrink-0">
+                <img src="ecologo.png" alt="Economics and Finance Club Logo"
+                    class="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform duration-300">
+                <div
+                    class="hidden sm:block text-xl md:text-2xl font-serif font-bold text-accent-silver tracking-wide leading-tight group-hover:text-accent-gold transition-colors">
+                    Economics and Finance Club
+                    <span
+                        class="text-accent-gold text-xs md:text-sm block font-sans font-light tracking-widest uppercase mt-0.5">IIT
+                        Delhi</span>
+                </div>
+                <!-- Mobile Fallback -->
+                <div
+                    class="sm:hidden text-lg font-serif font-bold text-accent-silver tracking-wide group-hover:text-accent-gold transition-colors">
+                    EcoClub <span
+                        class="text-accent-gold text-[10px] block font-sans font-light tracking-widest uppercase">IIT
+                        Delhi</span>
+                </div>
+            </a>
+
+            <div class="flex items-center space-x-6">
+                <a href="events.html"
+                    class="text-sm font-medium text-white hover:text-accent-gold transition-colors">Events</a>
+                <a href="team.html"
+                    class="text-sm font-medium text-white hover:text-accent-gold transition-colors">Team</a>
+                <a href="articles.html"
+                    class="text-sm font-medium text-white hover:text-accent-gold transition-colors">Articles</a>
+                <a href="index.html"
+                    class="inline-flex items-center text-sm font-medium text-accent-silver hover:text-accent-gold transition-colors">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Back <span class="hidden sm:inline">&nbsp;to Home</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Layout -->
+    <main class="pt-[140px] md:pt-32 pb-24 min-h-screen relative z-10">
+        <!-- Animated Gradient Mesh Background -->
+        <div class="mesh-bg absolute inset-0 z-[-1] opacity-60"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-secondary opacity-90 z-[-1]">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16" data-aos="fade-in">
+                <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4 text-accent-silver">Learning Repository</h1>
+                <p class="text-accent-silver/70 font-light max-w-3xl">An organized directory of foundational knowledge
+                    to accelerate your learning in financial markets and corporate finance.</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8">
+
+                <!-- Sidebar Navigation (Categories) -->
+                <aside class="w-full md:w-64 lg:w-72 flex-shrink-0" data-aos="fade-right">
+                    <div class="sticky top-[160px] md:top-32">
+                        <h3 class="text-xs uppercase tracking-widest text-accent-silver/50 mb-4 ml-2 font-semibold">
+                            Categories</h3>
+
+                        <!-- Categories Navigation Rail (Desktop) / Scroll Tabs (Mobile) -->
+                        <div id="category-nav"
+                            class="flex md:flex-col overflow-x-auto md:overflow-visible gap-2 pb-4 md:pb-0 hide-scrollbar snap-x relative pl-4 md:pl-0 border-l border-accent-silver/10 md:py-2 scroll-smooth">
+                            <!-- JS renders categories here with Glassmorphism vertical rail styling -->
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Resource Grid Content -->
+                <div class="flex-grow z-10" data-aos="fade-left">
+                    <div id="category-title-container" class="mb-4 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <h2 id="current-category-title"
+                                class="text-2xl md:text-3xl font-serif font-bold text-accent-silver">Learning Hub</h2>
+                            <span id="resource-count"
+                                class="px-3 py-1 bg-accent-silver/5 border border-accent-silver/10 rounded-full text-xs font-mono text-accent-gold shadow-sm backdrop-blur-sm">0
+                                items</span>
+                        </div>
+                    </div>
+
+                    <!-- Category Description -->
+                    <p id="category-description" class="text-accent-silver/50 font-light text-sm mb-5 max-w-2xl"></p>
+
+                    <!-- Type Filter Pills -->
+                    <div id="type-filter" class="flex flex-wrap gap-2 mb-6"></div>
+
+                    <!-- Resources Grid -->
+                    <div id="resources-grid"
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+                        <!-- JS renders resource cards here -->
+                    </div>
+
+                    <!-- No Results State -->
+                    <div id="no-results"
+                        class="hidden flex-col items-center justify-center py-20 glassmorphism rounded-2xl border border-accent-silver/10">
+                        <svg class="w-16 h-16 text-accent-silver/20 mb-4" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                        </svg>
+                        <h3 class="text-xl font-serif text-accent-silver mb-2">No resources found</h3>
+                        <p class="text-accent-silver/50 text-sm">Try adjusting your search terms or clearing the filter.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary/80 py-8 border-t border-accent-silver/10 text-center relative z-10">
+        <p class="text-accent-gold text-sm tracking-wide mb-2"><span class="text-accent-silver/80">For any queries
+                contact:</span> <a href="mailto:econ_finclub@iitd.ac.in"
+                class="hover:underline hover:text-white transition-colors">econ_finclub@iitd.ac.in</a></p>
+        <p class="text-accent-silver/50 text-xs tracking-wider uppercase">
+            &copy; 2026 Economics and Finance Club, IIT Delhi. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="resources_data.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

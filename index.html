@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economics and Finance Club | IIT Delhi</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#001B3A',
+                        secondary: '#0F172A',
+                        accent: {
+                            silver: '#E2E8F0',
+                            gold: '#D4AF37'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
+                        'glow': '0 0 15px rgba(212, 175, 55, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-gold selection:text-primary">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glassmorphism shadow-glass">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 md:gap-4 group">
+                <img src="ecologo.png" alt="Economics and Finance Club Logo"
+                    class="h-12 md:h-14 w-auto group-hover:scale-105 transition-transform duration-300">
+                <div
+                    class="hidden sm:block text-xl md:text-2xl font-serif font-bold text-accent-silver tracking-wide leading-tight group-hover:text-accent-gold transition-colors">
+                    Economics and Finance Club
+                    <span
+                        class="text-accent-gold text-xs md:text-sm block font-sans font-light tracking-widest uppercase mt-0.5">IIT
+                        Delhi</span>
+                </div>
+                <!-- Mobile Fallback -->
+                <div
+                    class="sm:hidden text-lg font-serif font-bold text-accent-silver tracking-wide group-hover:text-accent-gold transition-colors">
+                    EcoClub <span
+                        class="text-accent-gold text-[10px] block font-sans font-light tracking-widest uppercase">IIT
+                        Delhi</span>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="#about" class="hover:text-accent-gold transition-colors">About</a>
+                <a href="events.html" class="hover:text-accent-gold transition-colors">Events</a>
+                <a href="articles.html" class="hover:text-accent-gold transition-colors">Articles</a>
+                <a href="resources.html" class="hover:text-accent-gold transition-colors">Resources</a>
+                <a href="team.html" class="hover:text-accent-gold transition-colors">Team</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero & Intro (Full Screen) -->
+    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-[url('background.png')] bg-cover bg-center bg-no-repeat opacity-50"></div>
+            <div
+                class="absolute inset-0 bg-gradient-to-br from-primary/80 via-secondary/70 to-black/90 mix-blend-multiply">
+            </div>
+        </div>
+
+        <!-- Content Overlay -->
+        <div class="relative z-10 container mx-auto px-6 pt-20 flex flex-col items-center text-center">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 leading-tight" data-aos="fade-up"
+                data-aos-duration="1000">
+                Empowering Minds,<br>
+                <span class="text-gradient">Navigating Markets,</span><br>
+                Shaping Economies.
+            </h1>
+
+            <!-- Summary Box -->
+            <div class="mt-12 max-w-3xl border border-accent-silver/10 rounded-2xl p-8 md:p-10 glassmorphism shadow-glass"
+                data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                <p class="text-lg md:text-xl font-light text-accent-silver/90 leading-relaxed text-left md:text-center">
+                    The Economics and Finance Club (EcoClub) at IIT Delhi is the premier student-led body dedicated to
+                    fostering financial literacy and economic insight. We serve as a bridge between rigorous academia
+                    and the fast-paced industry, hosting high-impact guest lectures.
+                </p>
+            </div>
+        </div>
+
+        <!-- Socials Footer -->
+        <div class="absolute bottom-8 w-full flex justify-center space-x-6 z-10"
+            style="animation: fade-in-up 1s ease-out 0.6s both;">
+            <!-- Instagram SVG -->
+            <a href="https://www.instagram.com/ecoclubiitd/"
+                class="text-accent-silver hover:text-accent-gold transition-transform hover:scale-110 duration-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                        clip-rule="evenodd" />
+                </svg>
+            </a>
+            <!-- LinkedIn SVG -->
+            <a href="https://www.linkedin.com/in/economicsandfinanceclub-iitdelhi/"
+                class="text-accent-silver hover:text-accent-gold transition-transform hover:scale-110 duration-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                        clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Accent Divider -->
+    <div class="section-divider py-1"></div>
+
+    <!-- 2. Events & Initiatives -->
+    <section id="events" class="py-24 section-mesh-events relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-6" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Events & Initiatives</h2>
+                <div class="section-divider py-3"></div>
+            </div>
+            <p class="text-center text-accent-silver/50 font-light max-w-2xl mx-auto mb-16" data-aos="fade-up"
+                data-aos-delay="50">In collaboration with Goldman Sachs, BlackRock, Jane Street, IMC Trading, Da Vinci,
+                CFA Institute, and more.</p>
+
+            <!-- Auto-Sliding Events Carousel -->
+            <div id="events-carousel" class="events-carousel relative rounded-2xl overflow-hidden mb-16"
+                data-aos="fade-up" data-aos-delay="100">
+
+                <!-- Slide 1: Bullion Chase -->
+                <div class="events-carousel-slide active">
+                    <div class="absolute inset-0">
+                        <img src="Event Photo/Bullionchase.jpg" alt="Bullion Chase" class="w-full h-full object-cover"
+                            draggable="false">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                        </div>
+                    </div>
+                    <div class="absolute bottom-10 left-8 md:left-12 right-8 md:right-1/3 z-10">
+                        <span
+                            class="bg-red-500/20 text-red-300 text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold border border-red-400/30 backdrop-blur-sm inline-block mb-3">Competition</span>
+                        <span
+                            class="bg-accent-gold/20 text-accent-gold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold border border-accent-gold/30 backdrop-blur-sm inline-block mb-3 ml-2">CAIC</span>
+                        <h3 class="text-3xl md:text-5xl font-serif font-bold mb-3 leading-tight drop-shadow-lg">Bullion
+                            Chase</h3>
+                        <p class="text-accent-silver/80 font-light text-sm md:text-base max-w-lg">Inter-Hostel
+                            competition featuring quiz prelims, market trading semi-finals, and auction finals. A
+                            comprehensive finance challenge.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2: CEA Guest Lecture -->
+                <div class="events-carousel-slide">
+                    <div class="absolute inset-0">
+                        <img src="Event Photo/CEA.jpg" alt="Guest Lecture by India's Chief Economic Advisor"
+                            class="w-full h-full object-cover" draggable="false">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                        </div>
+                    </div>
+                    <div class="absolute bottom-10 left-8 md:left-12 right-8 md:right-1/3 z-10">
+                        <span
+                            class="bg-blue-500/20 text-blue-300 text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold border border-blue-400/30 backdrop-blur-sm inline-block mb-3">Guest
+                            Lecture</span>
+                        <span
+                            class="bg-accent-gold/20 text-accent-gold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold border border-accent-gold/30 backdrop-blur-sm inline-block mb-3 ml-2">CAIC</span>
+                        <h3 class="text-3xl md:text-5xl font-serif font-bold mb-3 leading-tight drop-shadow-lg">India's
+                            Chief Economic Advisor</h3>
+                        <p class="text-accent-silver/80 font-light text-sm md:text-base max-w-lg">An exclusive session
+                            with Dr. V. Anantha Nageswaran, offering insights into macroeconomic policy and India's
+                            economic trajectory.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Dalal Street -->
+                <div class="events-carousel-slide">
+                    <div class="absolute inset-0">
+                        <img src="Event Photo/dalalstreet.jpg" alt="Dalal Street — Stock Market Simulation"
+                            class="w-full h-full object-cover" draggable="false">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                        </div>
+                    </div>
+                    <div class="absolute bottom-10 left-8 md:left-12 right-8 md:right-1/3 z-10">
+                        <span
+                            class="bg-red-500/20 text-red-300 text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold border border-red-400/30 backdrop-blur-sm inline-block mb-3">Competition</span>
+                        <span
+                            class="bg-accent-gold/20 text-accent-gold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold border border-accent-gold/30 backdrop-blur-sm inline-block mb-3 ml-2">TRYST'26</span>
+                        <h3 class="text-3xl md:text-5xl font-serif font-bold mb-3 leading-tight drop-shadow-lg">Dalal
+                            Street</h3>
+                        <p class="text-accent-silver/80 font-light text-sm md:text-base max-w-lg">Stock Market
+                            Simulation Arena — a live trading competition where participants compete in real-time market
+                            scenarios.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Bluffs and Bargain -->
+                <div class="events-carousel-slide">
+                    <div class="absolute inset-0">
+                        <img src="Event Photo/Bluffsand bargain.jpg" alt="Bluffs and Bargains"
+                            class="w-full h-full object-cover" draggable="false">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                        </div>
+                    </div>
+                    <div class="absolute bottom-10 left-8 md:left-12 right-8 md:right-1/3 z-10">
+                        <span
+                            class="bg-red-500/20 text-red-300 text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold border border-red-400/30 backdrop-blur-sm inline-block mb-3">Competition</span>
+                        <span
+                            class="bg-accent-gold/20 text-accent-gold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold border border-accent-gold/30 backdrop-blur-sm inline-block mb-3 ml-2">TRYST'26</span>
+                        <h3 class="text-3xl md:text-5xl font-serif font-bold mb-3 leading-tight drop-shadow-lg">Bluffs
+                            and Bargains</h3>
+                        <p class="text-accent-silver/80 font-light text-sm md:text-base max-w-lg">Outwit, outsmart, and
+                            outnegotiate — a strategic bargaining and negotiation competition testing wits under
+                            pressure.</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev"
+                    class="carousel-nav-btn absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 flex items-center justify-center text-white/80 hover:bg-accent-gold hover:text-primary transition-all duration-300 opacity-0 group-hover:opacity-100"
+                    aria-label="Previous slide">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="carousel-next"
+                    class="carousel-nav-btn absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 flex items-center justify-center text-white/80 hover:bg-accent-gold hover:text-primary transition-all duration-300 opacity-0 group-hover:opacity-100"
+                    aria-label="Next slide">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                <!-- Dot Indicators -->
+                <div id="carousel-dots"
+                    class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
+                    <button class="carousel-dot active" data-index="0" aria-label="Slide 1"></button>
+                    <button class="carousel-dot" data-index="1" aria-label="Slide 2"></button>
+                    <button class="carousel-dot" data-index="2" aria-label="Slide 3"></button>
+                    <button class="carousel-dot" data-index="3" aria-label="Slide 4"></button>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-white/10 z-20">
+                    <div id="carousel-progress" class="h-full bg-accent-gold/80 transition-all ease-linear"
+                        style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- View All Events — Ghost Button -->
+            <div class="text-center" data-aos="fade-up">
+                <a href="events.html" class="ghost-btn rounded-sm">
+                    View All Events
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accent Divider -->
+    <div class="section-divider py-1"></div>
+
+    <!-- 3. Latest Insights -->
+    <section id="insights" class="py-24 section-mesh-articles relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-6" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Latest Insights</h2>
+                <div class="section-divider py-3"></div>
+            </div>
+            <p class="text-center text-accent-silver/50 font-light max-w-xl mx-auto mb-16" data-aos="fade-up"
+                data-aos-delay="50">In-depth articles and analysis from our research team.</p>
+
+            <div id="insights-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
+                <!-- Javascript will populate 3 recent articles here with stacked-card effect -->
+            </div>
+
+            <div class="text-center" data-aos="fade-up">
+                <a href="articles.html" class="ghost-btn rounded-sm">
+                    View All Articles
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accent Divider -->
+    <div class="section-divider py-1"></div>
+
+    <!-- 4. Resources Hub -->
+    <section id="resources" class="py-24 section-mesh-resources relative">
+        <div class="relative z-10 max-w-6xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-6" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Resources Hub</h2>
+                <div class="section-divider py-3"></div>
+            </div>
+            <p class="text-accent-silver/50 max-w-2xl mx-auto font-light text-center mb-16" data-aos="fade-up"
+                data-aos-delay="50">Curated materials to accelerate your journey into the world of finance, consulting,
+                and management.</p>
+
+            <!-- Interactive Feature Columns -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" data-aos="fade-up" data-aos-delay="100">
+
+                <!-- Quant Resources -->
+                <a href="resources.html" class="resource-column group block" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="mb-5 text-accent-gold w-14 h-14 rounded-xl bg-accent-gold/10 flex items-center justify-center border border-accent-gold/20 group-hover:scale-110 group-hover:border-accent-gold/40 transition-all duration-300">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
+                        </svg>
+                    </div>
+                    <h4
+                        class="text-xl font-serif font-semibold text-accent-silver group-hover:text-accent-gold transition-colors mb-2">
+                        Quant Resources</h4>
+                    <p class="text-sm text-accent-silver/50 leading-relaxed">Brainstellar, puzzles, probability
+                        challenges, and quantitative interview guides.</p>
+                    <div class="sub-topics">
+                        <ul class="space-y-1.5 text-xs text-accent-silver/40 font-light">
+                            <li class="flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-accent-gold/50"></span>Puzzles & Probability</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-accent-gold/50"></span>Stochastic Calculus</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-accent-gold/50"></span>Market Making Guides</li>
+                        </ul>
+                    </div>
+                    <div
+                        class="mt-4 flex items-center text-accent-gold text-sm font-medium opacity-70 group-hover:opacity-100 transition-opacity">
+                        Explore <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Intro to Stock Market -->
+                <a href="resources.html" class="resource-column group block" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="mb-5 text-accent-gold w-14 h-14 rounded-xl bg-accent-gold/10 flex items-center justify-center border border-accent-gold/20 group-hover:scale-110 group-hover:border-accent-gold/40 transition-all duration-300">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                        </svg>
+                    </div>
+                    <h4
+                        class="text-xl font-serif font-semibold text-accent-silver group-hover:text-accent-gold transition-colors mb-2">
+                        Intro to Stock Market</h4>
+                    <p class="text-sm text-accent-silver/50 leading-relaxed">The basics: why invest, market regulators,
+                        IPO processes, and clearing mechanisms.</p>
+                    <div class="sub-topics">
+                        <ul class="space-y-1.5 text-xs text-accent-silver/40 font-light">
+                            <li class="flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-accent-gold/50"></span>IPO & Listing</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-accent-gold/50"></span>SEBI Regulations</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-accent-gold/50"></span>Clearing & Settlement</li>
+                        </ul>
+                    </div>
+                    <div
+                        class="mt-4 flex items-center text-accent-gold text-sm font-medium opacity-70 group-hover:opacity-100 transition-opacity">
+                        Explore <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Fundamental Analysis -->
+                <a href="resources.html" class="resource-column group block" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="mb-5 text-accent-gold w-14 h-14 rounded-xl bg-accent-gold/10 flex items-center justify-center border border-accent-gold/20 group-hover:scale-110 group-hover:border-accent-gold/40 transition-all duration-300">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm2.25-4.5h.008v.008H10.5v-.008zm0 2.25h.008v.008H10.5v-.008zm0 2.25h.008v.008H10.5v-.008zm2.25-4.5h.008v.008H12.75v-.008zm0 2.25h.008v.008H12.75v-.008zm2.25-2.25h.008v.008H15v-.008zm0 2.25h.008v.008H15v-.008zM7.5 10.5h9V6.75a.75.75 0 00-.75-.75h-7.5a.75.75 0 00-.75.75v3.75z" />
+                        </svg>
+                    </div>
+                    <h4
+                        class="text-xl font-serif font-semibold text-accent-silver group-hover:text-accent-gold transition-colors mb-2">
+                        Fundamental Analysis</h4>
+                    <p class="text-sm text-accent-silver/50 leading-relaxed">Annual reports, P&L statements, balance
+                        sheets, and financial ratio analysis.</p>
+                    <div class="sub-topics">
+                        <ul class="space-y-1.5 text-xs text-accent-silver/40 font-light">
+                            <li class="flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-accent-gold/50"></span>DCF Analysis</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-accent-gold/50"></span>P&L Statements</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-accent-gold/50"></span>Ratio Analysis</li>
+                        </ul>
+                    </div>
+                    <div
+                        class="mt-4 flex items-center text-accent-gold text-sm font-medium opacity-70 group-hover:opacity-100 transition-opacity">
+                        Explore <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Technical Analysis -->
+                <a href="resources.html" class="resource-column group block" data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="mb-5 text-accent-gold w-14 h-14 rounded-xl bg-accent-gold/10 flex items-center justify-center border border-accent-gold/20 group-hover:scale-110 group-hover:border-accent-gold/40 transition-all duration-300">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                        </svg>
+                    </div>
+                    <h4
+                        class="text-xl font-serif font-semibold text-accent-silver group-hover:text-accent-gold transition-colors mb-2">
+                        Technical Analysis</h4>
+                    <p class="text-sm text-accent-silver/50 leading-relaxed">Candlestick patterns, moving averages,
+                        volumes, indicators, and the Dow Theory.</p>
+                    <div class="sub-topics">
+                        <ul class="space-y-1.5 text-xs text-accent-silver/40 font-light">
+                            <li class="flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-accent-gold/50"></span>Candlestick Patterns</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-accent-gold/50"></span>Moving Averages</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-accent-gold/50"></span>Dow Theory</li>
+                        </ul>
+                    </div>
+                    <div
+                        class="mt-4 flex items-center text-accent-gold text-sm font-medium opacity-70 group-hover:opacity-100 transition-opacity">
+                        Explore <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Ghost Button -->
+            <div class="mt-14 text-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="resources.html" class="ghost-btn rounded-sm">
+                    View More Topics
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Accent Divider -->
+    <div class="section-divider py-1"></div>
+
+    <!-- 5. Team -->
+    <section id="team" class="py-24 section-mesh-team relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-6" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Core Team</h2>
+                <div class="section-divider py-3"></div>
+            </div>
+            <p class="text-center text-accent-silver/50 font-light max-w-2xl mx-auto mb-16" data-aos="fade-up"
+                data-aos-delay="50">Tenure 2025-26</p>
+
+            <!-- OC & Co-OC -->
+            <div class="mb-16" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex flex-col md:flex-row justify-center items-stretch gap-8 max-w-3xl mx-auto">
+                    <!-- OC -->
+                    <div class="group relative flex-1">
+                        <div
+                            class="aspect-[3/4] rounded-xl overflow-hidden bg-secondary mb-4 border border-accent-gold/20 relative shadow-glow">
+                            <img src="Team Photo/Anish.png" alt="Anish Gupta"
+                                class="w-full h-full object-cover transition-all duration-500" draggable="false">
+                            <div
+                                class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-xl font-serif font-semibold text-accent-silver">Anish Gupta</h4>
+                            <p class="text-sm text-accent-gold font-light uppercase tracking-wider">Overall Coordinator
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Co-OC -->
+                    <div class="group relative flex-1">
+                        <div
+                            class="aspect-[3/4] rounded-xl overflow-hidden bg-secondary mb-4 border border-accent-silver/10 relative">
+                            <img src="Team Photo/Kritika.jpeg" alt="Kritika Chaudhary"
+                                class="w-full h-full object-cover transition-all duration-500" draggable="false">
+                            <div
+                                class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-xl font-serif font-semibold text-accent-silver">Kritika Chaudhary</h4>
+                            <p class="text-sm text-accent-gold font-light uppercase tracking-wider">Co - Overall
+                                Coordinator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTMs -->
+            <div class="mb-16" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center justify-center mb-10 opacity-70">
+                    <span class="w-12 h-px bg-accent-silver mr-4"></span>
+                    <h3 class="text-xl font-serif text-accent-silver tracking-widest uppercase">Core Team Members</h3>
+                    <span class="w-12 h-px bg-accent-silver ml-4"></span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <!-- CTM 1 -->
+                    <div class="group relative">
+                        <div
+                            class="aspect-[3/4] rounded-xl overflow-hidden bg-secondary mb-4 border border-accent-silver/10 relative">
+                            <img src="Team Photo/Krish.jpeg" alt="Krish Shah"
+                                class="w-full h-full object-cover transition-all duration-500" draggable="false">
+                            <div
+                                class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-lg font-serif font-semibold text-accent-silver">Krish Shah</h4>
+                            <p class="text-sm text-accent-gold font-light uppercase tracking-wider">CTM</p>
+                        </div>
+                    </div>
+
+                    <!-- CTM 2 -->
+                    <div class="group relative">
+                        <div
+                            class="aspect-[3/4] rounded-xl overflow-hidden bg-secondary mb-4 border border-accent-silver/10 relative">
+                            <img src="Team Photo/Pradumn_Agrawal .jpg" alt="Pradumn Agrawal"
+                                class="w-full h-full object-cover transition-all duration-500" draggable="false">
+                            <div
+                                class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-lg font-serif font-semibold text-accent-silver">Pradumn Agrawal</h4>
+                            <p class="text-sm text-accent-gold font-light uppercase tracking-wider">CTM</p>
+                        </div>
+                    </div>
+
+                    <!-- CTM 3 -->
+                    <div class="group relative">
+                        <div
+                            class="aspect-[3/4] rounded-xl overflow-hidden bg-secondary mb-4 border border-accent-silver/10 relative">
+                            <img src="Team Photo/Bharat Agarwal .webp" alt="Bharat Agarwal"
+                                class="w-full h-full object-cover transition-all duration-500" draggable="false">
+                            <div
+                                class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-lg font-serif font-semibold text-accent-silver">Bharat Agarwal</h4>
+                            <p class="text-sm text-accent-gold font-light uppercase tracking-wider">CTM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View Full Team — Ghost Button -->
+            <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                <a href="team.html" class="ghost-btn rounded-sm">
+                    Meet the Full Team
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-secondary/80 py-8 border-t border-accent-silver/10 text-center">
+        <p class="text-accent-gold text-sm tracking-wide mb-2"><span class="text-accent-silver/80">For any queries
+                contact:</span> <a href="mailto:econ_finclub@iitd.ac.in"
+                class="hover:underline hover:text-white transition-colors">econ_finclub@iitd.ac.in</a></p>
+        <p class="text-accent-silver/50 text-xs tracking-wider uppercase">
+            &copy; 2026 Economics and Finance Club, IIT Delhi. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Articles Data & Main Logic -->
+    <script src="articles_data.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
