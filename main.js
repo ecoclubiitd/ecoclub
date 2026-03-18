@@ -481,6 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!teamSet) return;
 
         const members = teamSet.members;
+        const level0 = members.filter(m => m.level === 0); // Faculty President
         const level1 = members.filter(m => m.level === 1); // OC
         const level2 = members.filter(m => m.level === 2); // Co-OC
         const level3 = members.filter(m => m.level === 3); // CTMs
@@ -488,13 +489,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let htmlString = '';
 
+        // Level 0 (Faculty President)
+        if (level0.length > 0) {
+            htmlString += `
+                <div class="mb-12" data-aos="fade-up" data-aos-delay="25">
+                    <div class="flex justify-center max-w-sm mx-auto">
+                        ${level0.map(m => createMemberCard(m, 'w-full')).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
         // Level 1 & 2
         if (level1.length > 0 || level2.length > 0) {
             htmlString += `
                 <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="50">
                     ${level1.length > 0 ? `
                         <div class="flex-1 w-full flex flex-col">
-                            ${level1.map(m => createMemberCard(m, 'ring-1 ring-accent-gold/30 bg-accent-silver/5 delay-75 h-full flex-grow')).join('')}
+                            ${level1.map(m => createMemberCard(m, 'h-full flex-grow')).join('')}
                         </div>
                     ` : ''}
                     ${level2.length > 0 ? `

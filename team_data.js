@@ -2,6 +2,7 @@ const teamData = [
     {
         year: "2025-2026",
         members: [
+            { name: "Prof. Debasis Mondal", role: "Faculty President", level: 0, photo: "debasis.webp" },
             { name: "Anish Gupta", role: "Overall Coordinator", level: 1, photo: "Team Photo/Anish.webp" },
             { name: "Kritika Chaudhary", role: "Co - Overall Coordinator", level: 2, photo: "Team Photo/Kritika.webp" },
             { name: "Krish Shah", role: "CTM", level: 3, photo: "Team Photo/Krish.webp" },
